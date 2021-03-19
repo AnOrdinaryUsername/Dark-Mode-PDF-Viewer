@@ -1,0 +1,72 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout project source code
+      - uses: actions/checkout@v2
+
+      # Use node for commands in package.json
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci
+
+      - name: Lint jsx
+        run: npm run lint
+
+  deploy:
+    # integration job must be successful for the deploy job to proceed
+    needs: integration
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout project source code
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      # Use node for commands in package.json
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Build site
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy 🥳🎉
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
+          CLEAN: true
