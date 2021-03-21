@@ -53,12 +53,13 @@ const selectSize = (size) => {
         case 'large':
             return largeButton;
         default:
-            return mediumButton;
+            return 'padding: inherit';
     }
 };
 
 export const defaultButtonStyles = css`
     border-radius: 0.8rem;
+    font-weight: 700;
 `;
 
 const StyledButton = styled.button`
