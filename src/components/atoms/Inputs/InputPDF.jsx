@@ -3,12 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
 import { defaultButtonStyles, mediumButton, secondaryButton } from '../Buttons/Button';
-
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-`;
+import { InputColumn } from './Input';
 
 // Label simulates a button in this case since styling <input type="file" /> is hard.
 const Label = styled.label`
@@ -18,6 +13,7 @@ const Label = styled.label`
     box-shadow: 0.5rem 0.5rem var(--button-bg-color);
     transform: translate(0, 0);
     transition: transform 0.2s, box-shadow 0.2s cubic-bezier(0.4, 1.7, 0.7, 1);
+    margin-top: 3.2rem;
 
     &:hover {
         transform: translate(0.5rem, 0.5rem);
@@ -43,12 +39,23 @@ const HiddenInput = styled.input`
     width: 1px;
 `;
 
-const InputPDF = ({ inputRef }) => {
+const InputPDF = ({ inputRef, onChange, onFileReset }) => {
+    const grabFileContents = (event) => {
+        onChange(event);
+    };
+
+    const resetValue = (event) => {
+        event.target.value = null;
+        onFileReset();
+    };
+
     return (
-        <Wrapper>
+        <InputColumn>
             <Label htmlFor="pdf">
                 <HiddenInput
                     ref={inputRef}
+                    onChange={grabFileContents}
+                    onClick={resetValue}
                     type="file"
                     id="pdf"
                     name="pdf"
@@ -58,7 +65,7 @@ const InputPDF = ({ inputRef }) => {
                 <FontAwesomeIcon icon={faUpload} />
                 Upload PDF
             </Label>
-        </Wrapper>
+        </InputColumn>
     );
 };
 
