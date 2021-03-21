@@ -6,7 +6,7 @@ const GroupContainer = styled.div`
     grid-template-columns: ${({ count }) => `repeat(${count}, 1fr)`};
     align-items: baseline;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: ${({ fontSize }) => fontSize || `1.5em`};
 
     & a {
         display: inline-flex;
@@ -16,15 +16,15 @@ const GroupContainer = styled.div`
         width: 100%;
         line-height: normal;
     }
-
-    & > * {
-        padding: 0 1rem;
-    }
 `;
 
-const ButtonGroup = ({ children }) => {
+const ButtonGroup = ({ children, className, fontSize }) => {
     const childrenCount = Children.count(children);
-    return <GroupContainer count={childrenCount}>{children}</GroupContainer>;
+    return (
+        <GroupContainer count={childrenCount} className={className} fontSize={fontSize}>
+            {children}
+        </GroupContainer>
+    );
 };
 
 export default ButtonGroup;
