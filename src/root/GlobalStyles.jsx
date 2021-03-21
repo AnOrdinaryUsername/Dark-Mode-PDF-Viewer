@@ -127,10 +127,14 @@ const GlobalStyles = createGlobalStyle`
         flex-flow: column nowrap;
         font: 16px/1.65 system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
             Helvetica Neue, sans-serif;
-        font-size: 1.6em;
+        font-size: 1.4em;
         line-height: 1.65;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+
+        @media (min-width: 576px) {
+            font-size: 1.6em;
+        }
     }
 
     button {
