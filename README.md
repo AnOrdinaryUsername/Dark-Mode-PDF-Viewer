@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Dark-Mode-PDF-Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+View any PDF in Dark Mode with this handy dandy [website](https://anordinaryusername.github.io/Dark-Mode-PDF-Viewer/).
 
-## Available Scripts
+<div align="center">
+        <img alt="Showcase of the main page of the site in Dark Mode" src="https://i.imgur.com/0V2wTtf_d.webp?maxwidth=1520&fidelity=grand">
+</div>
 
-In the project directory, you can run:
+## Why make this?
 
-### `npm start`
+When viewing ebooks on a computer, the bright white backgrounds combined with black text really strained
+my eyes, especially when viewing in a dimly lit environment. Although I found other tools to relieve
+me of my pain, they weren't without drawbacks, which ranged from limited customization in the case of
+Adobe Acrobat Reader, or just didn't work for local files as is the case of Dark Reader.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+So I made this to help me and other people who face similar issues.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Running it locally
 
-### `npm test`
+Fork the repo and clone it with ssh
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+> git clone git@github.com:your-username/Dark-Mode-PDF-Viewer.git
+```
 
-### `npm run build`
+Or https
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+> git clone https://github.com/your-username/Dark-Mode-PDF-Viewer.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Change to the Dark-Mode-PDF-Viewer directory
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+> cd Dark-Mode-PDF-Viewer
+```
 
-### `npm run eject`
+### Using npm
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In the repo folder run
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+> npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Then start up the dev server. It should automatically open [http://localhost:3000/Dark-Mode-PDF-Viewer](http://localhost:3000/Dark-Mode-PDF-Viewer) in your browser.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+> npm start
+```
