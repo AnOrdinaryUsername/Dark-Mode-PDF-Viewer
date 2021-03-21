@@ -139,10 +139,7 @@ const InputRange = ({ id, initialValue, max, min, step, ...props }) => {
         const percent = ((initialValue - min) / (max - min)) * 100;
         const input = document.getElementById(id);
         input.style.setProperty('--webkitProgressPercent', `${percent}%`);
-        console.log('wowee');
     }, [initialValue, min, max, id]);
-
-    console.log(props.initialValue);
 
     return (
         <InputColumn>

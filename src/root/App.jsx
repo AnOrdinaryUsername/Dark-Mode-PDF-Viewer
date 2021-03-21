@@ -49,8 +49,6 @@ const App = () => {
         url = window.URL.createObjectURL(urlBlob);
     }
 
-    console.log('hue', hue);
-    console.log('Invert ', invertValue);
     return (
         <>
             <GlobalStyles />
