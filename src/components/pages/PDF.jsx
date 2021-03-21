@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { PDFButtons } from '../molecules';
 
 const Wrapper = styled.main`
-    filter: ${({ isDarkTheme }) => (isDarkTheme ? 'invert(0.8) hue-rotate(180deg)' : 'initial')};
+    filter: ${({ hue, invert, isDarkTheme }) =>
+        isDarkTheme ? `invert(${invert}) hue-rotate(${hue}deg)` : 'initial'};
 `;
 
 const IFrame = styled.iframe`
@@ -15,7 +16,7 @@ const IFrame = styled.iframe`
     z-index: 1;
 `;
 
-const PDF = ({ onClick, src, titleName }) => {
+const PDF = ({ hue, invertValue, onClick, src, titleName }) => {
     const [theme, setTheme] = useState(true);
 
     const changeTheme = () => {
@@ -23,7 +24,7 @@ const PDF = ({ onClick, src, titleName }) => {
     };
 
     return (
-        <Wrapper isDarkTheme={theme}>
+        <Wrapper isDarkTheme={theme} hue={hue} invert={invertValue}>
             <PDFButtons onClick={onClick} clickTheme={changeTheme} theme={theme} />
             <IFrame
                 src={src}
