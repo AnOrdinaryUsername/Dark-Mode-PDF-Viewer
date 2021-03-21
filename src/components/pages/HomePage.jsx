@@ -1,37 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, InputPDF } from '../atoms';
-import { Article, SectionBox } from '../molecules';
+import { Article, PreviewPDF, Settings } from '../molecules';
 import { Header } from '../organisms';
 
-const Form = styled.form`
-    display: grid;
-    place-items: center;
-    row-gap: 3.2rem;
-`;
-
-const Box = styled(SectionBox)`
-    margin-top: 1.6rem;
+const Row = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    margin-top: 3.2rem;
+    width: 100%;
 
     & > * {
-        margin-top: 1.6rem;
+        min-height: 100%;
+        height: 55rem;
+    }
+
+    & > *:nth-child(2) {
+        margin-bottom: 3.2rem;
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
     }
 `;
 
-const HomePage = ({ inputRef, onSubmit }) => {
+const HomePage = ({ file, ...props }) => {
     return (
         <>
             <Header />
             <main>
                 <Article title="Dark Mode PDF">
-                    <Box title="Settings">
-                        <Form onSubmit={onSubmit}>
-                            <InputPDF inputRef={inputRef} />
-                            <Button variant="primary" size="medium">
-                                View PDF
-                            </Button>
-                        </Form>
-                    </Box>
+                    <Row>
+                        <Settings {...props} />
+                        <PreviewPDF {...props} file={file} />
+                    </Row>
                 </Article>
             </main>
         </>
