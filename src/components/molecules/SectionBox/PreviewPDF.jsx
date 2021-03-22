@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import styled from 'styled-components';
+import { useWindowSize } from '../../../hooks';
 import SectionBox from './SectionBox';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -14,6 +15,7 @@ const Box = styled(SectionBox)`
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: 40rem;
 
     & > p {
         text-align: center;
@@ -32,41 +34,9 @@ const Heading = styled.h2`
     padding-bottom: 1.6rem;
 `;
 
-// Custom hook from https://usehooks.com/useWindowSize/
-function useWindowSize() {
-    // Initialize state with undefined width/height so server and client renders match
-    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-    const [windowSize, setWindowSize] = useState({
-        width: undefined,
-        height: undefined,
-    });
-
-    useEffect(() => {
-        // Handler to call on window resize
-        function handleResize() {
-            // Set window width/height to state
-            setWindowSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        }
-
-        // Add event listener
-        window.addEventListener('resize', handleResize);
-
-        // Call handler right away so state gets updated with initial window size
-        handleResize();
-
-        // Remove event listener on cleanup
-        return () => window.removeEventListener('resize', handleResize);
-    }, []); // Empty array ensures that effect is only run on mount
-
-    return windowSize;
-}
-
 const PreviewPDF = ({ hue, invertValue, file }) => {
     const size = useWindowSize();
-    const mobilePortrait = size.width < 456;
+    const mobilePortrait = size.width < 576;
 
     return (
         <Box>
