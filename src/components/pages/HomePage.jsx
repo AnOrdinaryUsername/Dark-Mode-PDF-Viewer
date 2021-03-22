@@ -10,13 +10,18 @@ const Row = styled.div`
     margin-top: 3.2rem;
     width: 100%;
 
-    & > * {
-        min-height: 100%;
-        height: 55rem;
-    }
-
     & > *:nth-child(2) {
         margin-bottom: 3.2rem;
+    }
+
+    & > * {
+        min-height: 100%;
+    }
+
+    @media (min-width: 576px) {
+        & > * {
+            height: 55rem;
+        }
     }
 
     @media (min-width: 768px) {
