@@ -85,11 +85,6 @@ const GlobalStyles = createGlobalStyle`
 
     /* Default is dark theme. */
     :root {
-        /* Responsive breakpoints*/
-        --small: 576px;
-        --medium: 768px;
-        --large: 992px;
-
         --bg-color: hsl(274, 4%, 16%);
         --font-color: hsl(0, 0%, 96%);
         --underline: hsl(316, 30%, 36%);
