@@ -1,6 +1,8 @@
 {
   "short_name": "Dark Mode PDF",
   "name": "Dark Mode PDF Viewer",
+  "description": "Upload and view pdfs in dark mode",
+  "lang": "en",
   "icons": [
     {
       "src": "favicon.ico",
@@ -16,5 +18,6 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#29272a",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "prefer_related_applications": false
 }

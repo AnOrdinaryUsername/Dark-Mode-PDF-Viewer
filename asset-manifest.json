@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Dark-Mode-PDF-Viewer/static/js/main.f82f6842.chunk.js",
-    "main.js.map": "/Dark-Mode-PDF-Viewer/static/js/main.f82f6842.chunk.js.map",
+    "main.js": "/Dark-Mode-PDF-Viewer/static/js/main.f63d2218.chunk.js",
+    "main.js.map": "/Dark-Mode-PDF-Viewer/static/js/main.f63d2218.chunk.js.map",
     "runtime-main.js": "/Dark-Mode-PDF-Viewer/static/js/runtime-main.302684ee.js",
     "runtime-main.js.map": "/Dark-Mode-PDF-Viewer/static/js/runtime-main.302684ee.js.map",
     "static/css/2.fe38e6c6.chunk.css": "/Dark-Mode-PDF-Viewer/static/css/2.fe38e6c6.chunk.css",
@@ -10,6 +10,8 @@
     "static/js/3.fd2e90a8.chunk.js": "/Dark-Mode-PDF-Viewer/static/js/3.fd2e90a8.chunk.js",
     "static/js/3.fd2e90a8.chunk.js.map": "/Dark-Mode-PDF-Viewer/static/js/3.fd2e90a8.chunk.js.map",
     "index.html": "/Dark-Mode-PDF-Viewer/index.html",
+    "service-worker.js": "/Dark-Mode-PDF-Viewer/service-worker.js",
+    "service-worker.js.map": "/Dark-Mode-PDF-Viewer/service-worker.js.map",
     "static/css/2.fe38e6c6.chunk.css.map": "/Dark-Mode-PDF-Viewer/static/css/2.fe38e6c6.chunk.css.map",
     "static/js/2.f81f1977.chunk.js.LICENSE.txt": "/Dark-Mode-PDF-Viewer/static/js/2.f81f1977.chunk.js.LICENSE.txt"
   },
@@ -17,6 +19,6 @@
     "static/js/runtime-main.302684ee.js",
     "static/css/2.fe38e6c6.chunk.css",
     "static/js/2.f81f1977.chunk.js",
-    "static/js/main.f82f6842.chunk.js"
+    "static/js/main.f63d2218.chunk.js"
   ]
 }
