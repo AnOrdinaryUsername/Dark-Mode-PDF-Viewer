@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import styled from 'styled-components';
-import { useWindowSize } from '../../../hooks';
 import { Button } from '../../atoms';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -44,7 +43,6 @@ const Wrapper = styled.div`
 const MobilePDF = ({ component, file }) => {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
-    const size = useWindowSize();
 
     const onDocumentLoadSuccess = ({ numPages }) => {
         setNumPages(numPages);
@@ -71,7 +69,7 @@ const MobilePDF = ({ component, file }) => {
                 renderMode="svg"
                 onLoadSuccess={onDocumentLoadSuccess}
             >
-                <Page width={size.width} pageNumber={pageNumber} />
+                <Page width={window.innerWidth} pageNumber={pageNumber} />
             </Document>
             <Options>
                 <p>
